@@ -1,0 +1,31 @@
+type Query {
+  info: String!
+  feed: [Task!]!
+}
+
+type Mutation {
+  post(title: String!, description: String!): Link!
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
+}
+
+type Task {
+  id: ID!
+  title: String!
+  description: String!
+  creationTime: String!
+  createdBy: User
+  finished: Boolean
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  tasks: [Task!]!
+}
