@@ -62,7 +62,7 @@ async function login(parent, args, context, info) {
     }
 }
 
-function post(parent, args, context, info) {
+async function post(parent, args, context, info) {
     try {
         const userId = getUserId(context)
         const r=await context.db.collection('tasks').insertOne({

@@ -1,16 +1,17 @@
 const { GraphQLServer } = require('graphql-yoga')
 const cookieParser = require('cookie-parser')
 
-const mongo = require('./mongo')
+const { client, dbName } = require('./mongo')
 const config = require('./graphqlConfig')
+const resolvers = config.resolvers;
 
 (async function () {
     try {
         await client.connect()
-        const db = client.db(mongo.dbName)
+        const db = client.db(dbName)
         const server = new GraphQLServer({
             typeDefs: config.schema,
-            config.resolvers,
+            resolvers,
             context: (request, response) => ({ ...request, response, db })
         })
         server.express.use(cookieParser())
