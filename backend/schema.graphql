@@ -4,7 +4,7 @@ type Query {
 }
 
 type Mutation {
-  post(title: String!, description: String!): Link!
+  post(title: String!, description: String!): Task!
   signup(email: String!, password: String!, name: String!): AuthPayload
   login(email: String!, password: String!): AuthPayload
 }
@@ -14,7 +14,7 @@ type Task {
   title: String!
   description: String!
   creationTime: String!
-  createdBy: User
+  postedBy: User
   finished: Boolean
 }
 

@@ -3,12 +3,12 @@ const schema = './backend/schema.graphql'
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
 // const User = require('./resolvers/User')
-const Link = require('./resolvers/Link')
+const Task = require('./resolvers/Task')
 
-const resolvers = { Query, Mutation, Link }    //, User}
+const resolvers = { Query, Mutation, Task }    //, User}
 
 const options = {
-    port: process.env.API_PORT || 80,
+    port: process.env.API_PORT || 8080,
     endpoint: '/api',
     subscriptions: '/ws',
     playground: false,
