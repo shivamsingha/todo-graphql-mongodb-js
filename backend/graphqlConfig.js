@@ -8,10 +8,10 @@ const Task = require('./resolvers/Task')
 const resolvers = { Query, Mutation, Task }    //, User}
 
 const options = {
-    port: process.env.API_PORT || 8080,
+    port: process.env.API_PORT || 80,
     endpoint: '/api',
     subscriptions: '/ws',
-    playground: false,
+    playground: '/pg',
 }
 
 module.exports = {

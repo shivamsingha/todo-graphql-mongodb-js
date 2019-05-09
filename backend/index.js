@@ -12,7 +12,7 @@ const resolvers = config.resolvers;
         const server = new GraphQLServer({
             typeDefs: config.schema,
             resolvers,
-            context: (request, response) => ({ ...request, response, db })
+            context: (req) => ({ ...req, db })
         })
         server.express.use(cookieParser())
         server.start(config.options, ({ port }) => console.log(`Server is running on http://localhost:${port}`))
