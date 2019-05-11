@@ -5,6 +5,11 @@ const { client, dbName } = require('./mongo')
 const config = require('./graphqlConfig')
 const resolvers = config.resolvers;
 
+process.on('exit', (code)=>{
+    client.close()
+    console.warn(`Exiting with code ${code}`)
+})
+
 (async function () {
     try {
         await client.connect()
@@ -20,6 +25,4 @@ const resolvers = config.resolvers;
     catch (err) {
         console.error(err.stack)
     }
-
-    client.close()
 })()
