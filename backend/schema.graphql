@@ -10,7 +10,7 @@ type Mutation {
 }
 
 type Task {
-  id: ID!
+  _id: ID!
   title: String!
   description: String!
   creationTime: String!
@@ -24,7 +24,7 @@ type AuthPayload {
 }
 
 type User {
-  id: ID!
+  _id: ID!
   name: String!
   email: String!
   tasks: [Task!]!

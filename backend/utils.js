@@ -1,16 +1,22 @@
 const jwt = require('jsonwebtoken')
-const APP_SECRET = process.env.SECRET
+const APP_SECRET = () => {
+  if(!process.env.SECRET)
+    throw new Error('App Secret not set!')
+  return process.env.SECRET
+}
 
 function getUserId(context) {
-  // const Authorization = context.request.get('Authorization')
-  const Authorization = context.request.cookie.token
-  if (Authorization) {
-    // const token = Authorization.replace('Bearer ', '')
-    const token = Authorization
-    const { userId } = jwt.verify(token, APP_SECRET, { algorithm: 'HS512' })
-    return userId
+  try {
+    const token = context.request.cookie.token
+    if (token) {
+      const { userId } = jwt.verify(token, APP_SECRET, { algorithm: 'HS512' })
+      return userId
+    }
+    throw new Error('Not authenticated')
   }
-  throw new Error('Not authenticated')
+  catch(err) {
+    console.error(err)
+  }
 }
 
 module.exports = {
