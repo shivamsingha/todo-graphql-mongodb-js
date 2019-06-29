@@ -1,4 +1,10 @@
-const { GraphQLServer } = require('graphql-yoga')
+const express=require('express')
+const app=express()
+const {ApolloServer, gql}=require('apollo-server-express')
+
+
+
+/*const { GraphQLServer } = require('graphql-yoga')
 const cookieParser = require('cookie-parser')
 
 const { client, dbName } = require('./mongo')
@@ -30,4 +36,4 @@ function exitHandler(code) {
 process.on('exit', exitHandler)
 process.on('SIGINT', ()=>process.exit(0))
 process.on('SIGTERM', ()=>process.exit(0))
-process.on('SIGHUP', ()=>process.exit(0))
+process.on('SIGHUP', ()=>process.exit(0))*/
