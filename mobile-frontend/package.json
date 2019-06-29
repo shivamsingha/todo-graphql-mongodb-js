@@ -1,0 +1,36 @@
+{
+  "name": "todo-graphql-mongodb-js-mobile-frontend",
+  "version": "1.0.0",
+  "description": "Mobile frontend for todo-graphql-mongodb-js project using react-native",
+  "main": "index.js",
+  "repository": "https://gitlab.com/shivamsingha/todo-graphql-mongodb-js.git",
+  "author": "shivamsingha",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-native": "0.60.0-rc.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/jest": "^24.0.15",
+    "@types/react": "^16.8.22",
+    "@types/react-native": "^0.57.64",
+    "@types/react-test-renderer": "^16.8.2",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-test-renderer": "16.8.6",
+    "typescript": "^3.5.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

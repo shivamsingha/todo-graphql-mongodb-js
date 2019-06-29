@@ -1,0 +1,9 @@
+{
+  "name": "todo-graphql-mongodb-js-backend",
+  "version": "1.0.0",
+  "description": "Backend for todo-graphql-mongodb-js project",
+  "main": "index.js",
+  "repository": "https://gitlab.com/shivamsingha/todo-graphql-mongodb-js.git",
+  "author": "shivamsingha",
+  "license": "Apache-2.0"
+}
